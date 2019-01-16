@@ -1,0 +1,10 @@
+button {
+    margin: 30px;
+    float: center;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+div.child {
+    flex-direction: row;
+}
