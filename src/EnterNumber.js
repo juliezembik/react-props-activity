@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './EnterNumber.css';
 
 class EnterNumber extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             Up: 'Up',
             Down: 'Down',
             inputNumber: 0
         };
     }
+
 
     handleChange = (event) => {
         this.setState({
@@ -18,16 +19,14 @@ class EnterNumber extends Component {
         });
     }
 
-    upVote = (event) => {
-        this.setState({
-            inputNumber: this.state.inputNumber + 1
-        });
+    upVote = () => {
+        // call the update total
+        this.props.updateTotal(this.state.inputNumber);
     }
 
-    downVote = (event) => {
-        this.setState({
-            inputNumber: this.state.inputNumber - 1
-        });
+    downVote = () => {
+        // pass a negative number to update total
+        this.props.updateTotal( 0 - this.state.inputNumber);
     }
 
 
